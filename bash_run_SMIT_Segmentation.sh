@@ -4,17 +4,15 @@
 use_smit=1 #Use SMIT not SMIT+
 
 #Data folder and there need a 'data.json' file in the folder 
-data_dir='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/test_data/'
+data_dir="$1"
 
 #Segmentation output folder 
-save_folder='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/test_data/Seg/'
-
-
-
+save_folder="$2"
 
 #Some configrations for the model, no need to change
 #Trained weight 
-load_weight_name='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/Lung_gtv_trained_weight/model.pt'
+load_weight_name="$3"
+
 a_min=-500
 a_max=500
 space_x=1.5
