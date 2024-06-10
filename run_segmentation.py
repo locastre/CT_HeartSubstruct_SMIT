@@ -39,13 +39,13 @@ parser = argparse.ArgumentParser(description='UNETR segmentation pipeline')
 parser.add_argument('--pretrained_dir', default='./pretrained_models/', type=str,
                     help='pretrained checkpoint directory')
 
-parser.add_argument('--data_dir', default='/lab/deasylab1/Sharif/voxelwise/data/BRAIN/', type=str,
+parser.add_argument('--data_dir', default='/scratch/input', type=str,
                     help='dataset directory')
 parser.add_argument('--json_list',
-                    default='/lab/deasylab1/Jue/Others/tep/temp/tep/UNETR/BTCV/clinical_data_imp/brain/data_json.json',
+                    default='/scratch/input/data.json',
                     type=str, help='dataset json file')
 
-parser.add_argument('--pretrained_model_name', default='UNETR_model_best_acc.pth', type=str,
+parser.add_argument('--pretrained_model_name', default='model.pt', type=str,
                     help='pretrained model name')
 parser.add_argument('--saved_checkpoint', default='ckpt', type=str,
                     help='Supports torchscript or ckpt pretrained checkpoint type')
@@ -128,21 +128,6 @@ def Get_body_wrapper(img, verbose = False, fg_thresh = 1e-4):
 
 def main():
     args = parser.parse_args()
-
-
-    #Overwritten
-    #args.use_smit=1 #Use SMIT not SMIT+
-    #args.data_dir='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/test_data/'
-    #args.save_folder='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/test_data/Seg/'
-    #args.load_weight_name='/lab/deasylab1/Jue/Clinical_experiment/CT_Lung_SMIT-main/Lung_gtv_trained_weight/model.pt'
-
-    #args.a_min=-500
-    #args.a_max=500
-    #args.space_x=1.5
-    #args.space_y=1.5
-    #args.space_z=2.0
-    #args.out_channels=1+1
-
 
     img_folder = args.data_dir
     save_folder = args.save_folder
