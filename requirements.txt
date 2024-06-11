@@ -37,12 +37,15 @@ tensorboard==2.16.2
 tensorboard-data-server==0.7.2
 tifffile==2024.5.22
 timm==0.6.12
-torch==1.12.1+cu116
-torchaudio==0.12.1+cu116
-torchvision==0.13.1+cu116
 tqdm==4.66.4
 trainer==0.0.36
 typing-extensions==4.12.1
 urllib3==2.2.1
 werkzeug==3.0.3
 zipp==3.19.2
+-i https://download.pytorch.org/whl/cu116
+torch==1.12.1+cu116
+-i https://download.pytorch.org/whl/cu116
+torchaudio==0.12.1+cu116
+-i https://download.pytorch.org/whl/cu116
+torchvision==0.13.1+cu116
