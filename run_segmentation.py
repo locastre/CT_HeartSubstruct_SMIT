@@ -135,7 +135,7 @@ def main():
         os.makedirs(save_folder)
 
     data_dir = args.data_dir
-    datalist_json = args.data_dir + 'data.json'
+    datalist_json = os.path.join(args.data_dir, 'data.json')
 
     
     val_org_transforms = Compose(
@@ -230,12 +230,12 @@ def main():
             seg_ori_size = val_outputs.numpy().astype(np.uint8)
             seg_ori_size = np.squeeze(seg_ori_size)
 
-            pred_sv_name = save_folder + os.path.split(args.load_weight_name)[-1].replace('.pt', '') + '_' + img_name
+            pred_sv_name = os.path.join(save_folder, os.path.split(args.load_weight_name)[-1].replace('.pt', '') + '_' + img_name)
 
             print('info: start get the info')
 
             #Start to filter the body 
-            cur_rd_path = img_folder + img_name
+            cur_rd_path = os.path.join(img_folder, img_name)
             im_obj = sitk.ReadImage(cur_rd_path)
             img_3d_data=sitk.GetArrayFromImage(im_obj)
             threshold_= -150
