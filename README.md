@@ -1,11 +1,3 @@
-
-### Run model
-Dependencies can be installed using:
-``` bash
-bash bash_run_SMIT_Segmentation.sh
-```
-
-
 ## References
 [1] Jiang, Jue, and Harini Veeraraghavan. "Self-supervised pretraining in the wild imparts image acquisition robustness to medical image transformers: an application to lung cancer segmentation." In Medical Imaging with Deep Learning. 2024.
 
