@@ -204,6 +204,7 @@ def main():
     print('info: started to load weight: ', args.load_weight_name)
     print('info: model emb feature is : ', args.model_feature)
     model.load_state_dict(model_dict['state_dict'], strict=True)
+    quit()
     model.eval()
     model.to(device)
     print('info: Successfully loaded trained weights: ', args.load_weight_name)
